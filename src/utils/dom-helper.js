@@ -56,6 +56,6 @@ function appendElementToPage(element, tagId, typeT) {
   try {
     document.getElementById(tagId).remove()
   } catch (e) {} //Delete any existing reference
-  Object.assign(element, { type: typeT, async: false, tagId: tagId })
+  Object.assign(element, { type: typeT, async: false, id: tagId })
   document.getElementsByTagName('head')[0].appendChild(element)
 }

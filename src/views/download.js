@@ -5,7 +5,8 @@ import addHotKeys from '../utils/hotkey'
 import { getBlockInfoByUID, queryCurrentActiveBlockUID, queryMinDate, queryNonCodeBlocks } from '../services/queries'
 import { shareImage } from '../utils/share-image'
 
-async function shareAndDownloadImage() {
+export async function shareAndDownloadImage() {
+  console.log('🎨 shareAndDownloadImage(=====>)')
   const existing = document.getElementById('share-card')
   if (!existing) {
     const element = document.createElement('div')
@@ -57,6 +58,7 @@ async function shareAndDownloadImage() {
 }
 
 export default function initDownloadMode() {
+  console.log('=====initDownloadMode')
   appendIcon('download', 'share', shareAndDownloadImage)
   addHotKeys({
     shortcutKeys: 's',
@@ -67,7 +69,7 @@ export default function initDownloadMode() {
     },
   })
   roamAlphaAPI.ui.blockContextMenu.addCommand({
-    label: "Share Block As Image (Alt+Shift+S)",
+    label: 'Share Block As Image (Alt+Shift+S)',
     callback: shareAndDownloadImage,
   })
 }

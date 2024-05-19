@@ -1,4 +1,4 @@
-import html2canvas from 'html2canvas';
+import html2canvas from 'html2canvas'
 
 const replaceAsImage = (imgUrl) => {
   const shareImage = document.querySelector('img.share-card')
@@ -24,19 +24,23 @@ function reset() {
 
 export async function shareImage(memo) {
   const node = document.querySelector('.share-memex-container')
+  node.style.width = '320px'
+
+  // delay to wait
+  // await new Promise((resolve) => setTimeout(resolve, 1500))
   // 制作图片中，请稍等...
   const canvas = await html2canvas(node, {
     logging: false,
     scale: 3,
     useCORS: true,
     letterRendering: true,
+    backgroundColor: '#FEFCF6',
   })
   const imageSrc = canvas.toDataURL('image/png', 1)
 
   // replaceAsImage(imageSrc);
   downloadImage(imageSrc, memo)
   // reset header and footer
-  reset()
+  // reset()
   return imageSrc
 }
-

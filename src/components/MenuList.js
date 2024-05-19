@@ -1,5 +1,6 @@
 import { html } from 'htm/react'
 import { switchTo } from '../utils/dom-helper'
+import { shareAndDownloadImage } from '../views/download'
 
 export default function MenuList() {
   return html` <ul class="bp3-menu bp3-elevation-1">
@@ -61,7 +62,7 @@ export default function MenuList() {
         class="bp3-menu-item bp3-icon-download"
         id="mode-button-download"
         tabindex="0"
-        onClick="${() => switchTo('simple-calendar-mode')}"
+        onClick="${() => shareAndDownloadImage()}"
         >Share Card</a
       >
     </li>
