@@ -24,11 +24,14 @@ function reset() {
 
 export async function shareImage(memo) {
   const node = document.querySelector('.share-memex-container')
-  node.style.width = '320px'
+  // node.style.width = '320px'
+  node.style.setProperty('width', '320px', 'important')
+  // node.style.setProperty('height', '100px', 'important')
 
-  // delay to wait
+  // 延迟以确保样式应用和元素重绘
   // await new Promise((resolve) => setTimeout(resolve, 1500))
-  // 制作图片中，请稍等...
+
+  // 生成图片
   const canvas = await html2canvas(node, {
     logging: false,
     scale: 3,
@@ -36,6 +39,7 @@ export async function shareImage(memo) {
     letterRendering: true,
     backgroundColor: '#FEFCF6',
   })
+
   const imageSrc = canvas.toDataURL('image/png', 1)
 
   // replaceAsImage(imageSrc);

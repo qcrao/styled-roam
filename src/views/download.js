@@ -31,6 +31,11 @@ export async function shareAndDownloadImage() {
     header.id = 'share-card-header'
     blockContainer.prepend(header)
 
+    // 创建双横线元素
+    const doubleLine = document.createElement('div')
+    doubleLine.className = 'double-line'
+    header.after(doubleLine)
+
     const footer = document.createElement('div')
     footer.id = 'share-card-footer'
     blockContainer.appendChild(footer)
