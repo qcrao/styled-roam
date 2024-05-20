@@ -15,7 +15,6 @@ export const downloadImage = (imageUrl, memo) => {
 
   anchorElement.dispatchEvent(event)
 }
-
 function reset() {
   document.querySelector('#share-card-header').remove()
   document.querySelector('#share-card-footer').remove()

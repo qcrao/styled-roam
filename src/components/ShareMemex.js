@@ -14,7 +14,7 @@ export function Footer({ blocksNum, usageDays, block }) {
         <div className="author">
           <span className="at">𐃏</span>
           <span className="username">
-            <a href="https://qcrao.com">qcrao.com</a>
+            <a href="https://qcrao.com">QCRAO.COM</a>
           </span>
         </div>
       </div>
