@@ -13,7 +13,9 @@ export function Footer({ blocksNum, usageDays, block }) {
         </div>
         <div className="author">
           <span className="at">𐃏</span>
-          <span className="username">{block.username}</span>
+          <span className="username">
+            <a href="https://qcrao.com">qcrao.com</a>
+          </span>
         </div>
       </div>
       <img src="" className="share-card" />
@@ -24,7 +26,17 @@ export function Footer({ blocksNum, usageDays, block }) {
 export function Header({ block }) {
   return (
     <div className="memo">
-      <div className="time">{new Date(block.time).toLocaleString()}</div>
+      <div className="time">
+        {new Date(block.time).toLocaleString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: true,
+        })}
+      </div>
       <div className="content">
         <p>{block.string}</p>
         <p />

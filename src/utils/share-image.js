@@ -24,6 +24,7 @@ function reset() {
 
 export async function shareImage(memo) {
   const node = document.querySelector('.share-memex-container')
+  const originalStyles = node.style.cssText // 保存原始样式
   // node.style.width = '320px'
   node.style.setProperty('width', '320px', 'important')
   // node.style.setProperty('height', '100px', 'important')
@@ -45,6 +46,7 @@ export async function shareImage(memo) {
   // replaceAsImage(imageSrc);
   downloadImage(imageSrc, memo)
   // reset header and footer
-  // reset()
+  node.style.cssText = originalStyles
+  reset()
   return imageSrc
 }
